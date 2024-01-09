@@ -1,8 +1,8 @@
 <?php
 
-namespace Awstalib\FilterableQM\FilterableQM;
+namespace Awstalib\FilterableQm\FilterableQm;
 
-trait FilterableQM
+trait FilterableQm
 {
     /**
      * Apply filters to the query based on the provided filters.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Awstalib\FilterableQM\PaginateModel;
+namespace Awstalib\FilterableQm\PaginateQm;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -24,9 +24,9 @@ trait PaginateQm
         $count = $query->count();
         $data = $query->skip($skip)->take($take)->get();
 
-        if ($returnHttp) {
-            return ApiResponse::success($data, 'Data retrieved successfully', null, $count);
-        }
+        // if ($returnHttp) {
+        //     return Apires::success($data, 'Data retrieved successfully', null, $count);
+        // }
 
         return [
             'data' => $data,
@@ -51,9 +51,9 @@ trait PaginateQm
         $count = $query->count();
         $data = $query->skip($skip)->take($take)->get();
 
-        if ($returnHttp) {
-            return ApiResponse::success($data, 'Data retrieved successfully', null, $count);
-        }
+        // if ($returnHttp) {
+        //     return Apires::success($data, 'Data retrieved successfully', null, $count);
+        // }
 
         return [
             'data' => $data,

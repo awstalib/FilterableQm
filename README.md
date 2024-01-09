@@ -37,7 +37,7 @@ use Awstalib\FilterableQm\PaginateQm;
 class YourModel extends Model
 {
     use PaginateQm;
-    protected $filterItem=['col1','col2];
+    protected $filterItem=['col1','col2'];
      // Your model logic here
     //You can extend filter with your own filter
     public function extendedFilter($query, $filterItem, $value)
