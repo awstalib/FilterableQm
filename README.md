@@ -37,8 +37,24 @@ use Awstalib\FilterableQm\PaginateQm;
 class YourModel extends Model
 {
     use PaginateQm;
-
-    // Your model logic here
+    protected $filterItem=['col1','col2];
+     // Your model logic here
+    //You can extend filter with your own filter
+    public function extendedFilter($query, $filterItem, $value)
+    {
+        if ($filterItem === 'account_currency' && !empty($value)) {
+            $query->whereHas('account', function ($query) use ($value) {
+                $query->where('currency_id', $value);
+            });
+        }
+        if($filterItem === 'account_number' && !empty($value)) {
+            $query->whereHas('account', function ($query) use ($value) {
+                $query->where('account_number', $value);
+            });
+        }
+        return $query;
+    }
+   
 }
 ```
 
