@@ -7,13 +7,13 @@ FilterableQm is a Laravel package that provides traits for filtering and paginat
 You can install the package via Composer. Run the following command:
 
 ```bash
-composer require awstalib/filterable-qm
-Usage
-
+composer require awstalib/filterable-qm 
+ ```
+## Usage
 FilterableQm Trait
 In your Eloquent model, use the FilterableQm trait:
-php
-Copy code
+
+```bash
 use Awstalib\FilterableQm\FilterableQm;
 
 class YourModel extends Model
@@ -22,15 +22,17 @@ class YourModel extends Model
 
     // Your model logic here
 }
+
+```
 Use the applyFilters method on your model's query builder:
-php
-Copy code
+```bash
 $filteredData = YourModel::query()->applyFilters($filters)->get();
+```
 PaginateQm Trait
 In your Eloquent model, use the PaginateQm trait:
-php
-Copy code
-use Awstalib\FilterableQm\PaginateQm;s
+
+```bash
+use Awstalib\FilterableQm\PaginateQm;
 
 class YourModel extends Model
 {
@@ -38,9 +40,12 @@ class YourModel extends Model
 
     // Your model logic here
 }
+```
+
+
 Utilize the paginateModel method in your controller:
-php
-Copy code
+
+```bash
 use Awstalib\FilterableQm\ApiResponse;
 
 public function index(Request $request)
@@ -48,19 +53,21 @@ public function index(Request $request)
     $data = $this->paginateModel(new YourModel(), $request, false);
     return ApiResponse::success($data['data'], 'Data retrieved successfully', null, $data['count']);
 }
-Version History
+```
+## Version History
 
-1.0.0 (January 1, 2024)
-Initial release.
-Added FilterableQm and PaginateQm traits.
-Basic filtering and pagination functionality.
-1.1.0 (February 1, 2024)
-Renamed traits to follow Laravel naming conventions.
-Updated documentation in README.md.
-Contributing
+### 1.0.0 (January 7, 2024)
+
+- Initial release.
+- Added `FilterableQm` and `PaginateQm` traits.
+- Basic filtering and pagination functionality.
+
+
+
+## Contributing
 
 Feel free to contribute to this project by forking it and creating a pull request.
 
-License
+## License
 
 This package is open-source and available under the MIT License.
