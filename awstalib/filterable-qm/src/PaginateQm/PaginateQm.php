@@ -4,7 +4,6 @@ namespace Awstalib\FilterableQm\PaginateQm;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Awstalib\FilterableQM\ApiResponse;
 
 trait PaginateQm
 {
