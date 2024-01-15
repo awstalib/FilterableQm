@@ -14,10 +14,15 @@ trait PaginateQm
      * @param int $takeDefault
      * @return array
      */
-    protected function paginateQuery(Builder $queryBuilder, Request $request, $returnHttp = false, $skipDefault = SkipTake::SKIP, $takeDefault = SkipTake::TAKE)
+    protected function paginateQuery(Builder $queryBuilder, Request $request)
     {
-        $skip = $request->input(config('filterable_qm.skip_key'), $skipDefault);
-        $take = $request->input(config('filterable_qm.take_key'), $takeDefault);
+        $skipKey = config('filterable_qm.skip_key');
+        $takeKey = config('filterable_qm.take_key');
+        $skipDefault = config('filterable_qm.default_skip', 0);
+        $takeDefault = config('filterable_qm.default_take', 10);
+    
+        $skip = $request->input($skipKey, $skipDefault);
+        $take = $request->input($takeKey, $takeDefault);
 
         $query = $queryBuilder->applyFilters($request->except(config('filterable_qm.skip_key'), config('filterable_qm.take_key')));
         $count = $query->count();
@@ -41,10 +46,15 @@ trait PaginateQm
      * @param int $takeDefault
      * @return array
      */
-    protected function paginateModel($model, Request $request, $returnHttp = false, $skipDefault = SkipTake::SKIP, $takeDefault = SkipTake::TAKE)
+    protected function paginateModel($model, Request $request)
     {
-        $skip = $request->input(config('filterable_qm.skip_key'), $skipDefault);
-        $take = $request->input(config('filterable_qm.take_key'), $takeDefault);
+        $skipKey = config('filterable_qm.skip_key');
+        $takeKey = config('filterable_qm.take_key');
+        $skipDefault = config('filterable_qm.default_skip', 0);
+        $takeDefault = config('filterable_qm.default_take', 10);
+    
+        $skip = $request->input($skipKey, $skipDefault);
+        $take = $request->input($takeKey, $takeDefault);
 
         $query = $model->query()->applyFilters($request->except(config('filterable_qm.skip_key'), config('filterable_qm.take_key')));
         $count = $query->count();
