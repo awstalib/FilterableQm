@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Awstalib\\FilterableQM\\": "src/"
+            "Awstalib\\FilterableQM\\": "awstalib/filterable-qm/src/"
         }
     },
     "extra": {
