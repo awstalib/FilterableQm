@@ -15,7 +15,7 @@ class FilterableQMServiceProvider extends ServiceProvider
     {
         // Publish configuration files, views, migrations, etc.
         $this->publishes([
-            __DIR__.'/config/filterable_qm.php' => config_path('filterable_qm.php'),
+            __DIR__.'/../config/filterable_qm.php' => config_path('filterable_qm.php'),
         ], 'config');
     }
 }
