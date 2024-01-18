@@ -14,7 +14,7 @@ trait PaginateQm
      * @param int $takeDefault
      * @return array
      */
-    protected function paginateQuery(Builder $queryBuilder, Request $request)
+    protected function paginateQuery(Builder $queryBuilder, Request $request,bool $enableFilter = true)
     {
         $skipKey = config('filterable_qm.skip_key');
         $takeKey = config('filterable_qm.take_key');
@@ -23,8 +23,11 @@ trait PaginateQm
     
         $skip = $request->input($skipKey, $skipDefault);
         $take = $request->input($takeKey, $takeDefault);
-
+        if($enableFilter){
         $query = $queryBuilder->applyFilters($request->except(config('filterable_qm.skip_key'), config('filterable_qm.take_key')));
+        }else{
+            $query = $queryBuilder;
+        }
         $count = $query->count();
         $data = $query->skip($skip)->take($take)->get();
 

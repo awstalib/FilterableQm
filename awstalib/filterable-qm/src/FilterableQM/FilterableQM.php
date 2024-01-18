@@ -19,7 +19,7 @@ trait FilterableQm
             $this?->extendedFilter($query, $key, $value);
 
             // Check if the key is allowed and the value is not empty
-            if (in_array($key, $this->filterItem) && !empty($value)) {
+            if (in_array($key, $this->filterItems) && !empty($value)) {
                 $query->where($key, $value);
             }
         }
