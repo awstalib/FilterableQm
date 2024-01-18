@@ -16,13 +16,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Awstalib\\FilterableQM\\": "src/"
+            "Awstalib\\FilterableQm\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Awstalib\\FilterableQM\\FilterableQmServiceProvider"
+                "Awstalib\\FilterableQm\\FilterableQmServiceProvider"
             ]
         }
     },
