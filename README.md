@@ -66,7 +66,7 @@ Utilize the paginateModel method in your controller:
 public function index(Request $request)
 {
     $data = $this->paginateModel(new YourModel(), $request, false);
-    return ApiResponse::success($data['data'], 'Data retrieved successfully', null, $data['count']);
+    return ApiResponse::success($data->data, 'Data retrieved successfully', null, $data->count);
 }
 ```
 ## Version History

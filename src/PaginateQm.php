@@ -12,8 +12,8 @@ trait PaginateQm
      * @param Request $request
      * @param int $skipDefault
      * @param int $takeDefault
-     * @return array
-     */
+     * @return stdClass of "data" and "count"
+     */ 
     protected function paginateQuery(Builder $queryBuilder, Request $request,bool $enableFilter = true)
     {
         $skipKey = config('filterable_qm.skip_key');
@@ -34,11 +34,10 @@ trait PaginateQm
         // if ($returnHttp) {
         //     return Apires::success($data, 'Data retrieved successfully', null, $count);
         // }
-
-        return [
-            'data' => $data,
-            'count' => $count
-        ];
+        $retrunValue= new \stdClass();
+        $retrunValue->data = $data;
+        $retrunValue->count = $count;
+        return $retrunValue;
     }
 
     /**
@@ -47,7 +46,7 @@ trait PaginateQm
      * @param bool $returnHttp
      * @param int $skipDefault
      * @param int $takeDefault
-     * @return array
+     * @return stdClass of "data" and "count"
      */
     protected function paginateModel($model, Request $request)
     {
@@ -67,9 +66,9 @@ trait PaginateQm
         //     return Apires::success($data, 'Data retrieved successfully', null, $count);
         // }
 
-        return [
-            'data' => $data,
-            'count' => $count
-        ];
+        $retrunValue= new \stdClass();
+        $retrunValue->data = $data;
+        $retrunValue->count = $count;
+        return $retrunValue;
     }
 }
