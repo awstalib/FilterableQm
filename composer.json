@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Awstalib\\FilterableQM\\src\\FilterableQMServiceProvider"
+                "Awstalib\\FilterableQM\\FilterableQmServiceProvider"
             ]
         }
     },
