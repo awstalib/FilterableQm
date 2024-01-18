@@ -1,6 +1,6 @@
 <?php
 
-namespace Awstalib\FilterableQm\FilterableQm;
+namespace Awstalib\FilterableQm;
 
 trait FilterableQm
 {

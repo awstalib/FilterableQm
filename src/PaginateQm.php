@@ -1,6 +1,6 @@
 <?php
 
-namespace Awstalib\FilterableQm\PaginateQm;
+namespace Awstalib\FilterableQm;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
