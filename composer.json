@@ -1,6 +1,6 @@
 {
     "name": "awstalib/filterable-qm",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Filterable Query or model Package",
     "keywords": ["laravel", "filterable", "query", "pagination"],
     "license": "MIT",
