@@ -22,7 +22,7 @@ trait FilterableQm
             }
 
             // Check if the key is allowed and the value is not empty
-            if (in_array($key, $this->filterItems) && $value!=null) {
+            if (in_array($key, $this->filterItems??[]) && $value!=null) {
                 $query->where($key, $value);
             }
         }
